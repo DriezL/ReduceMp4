@@ -7,6 +7,10 @@ string mp4InputDirectory = Environment.GetFolderPath(Environment.SpecialFolder.C
 string mp4OutputDirectory = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "/reducemp4/output";
 Console.WriteLine($"Input directory : {mp4InputDirectory}");
 Console.WriteLine($"Output directory: {mp4OutputDirectory}");
+if (!Directory.Exists(mp4OutputDirectory))
+{
+    Directory.CreateDirectory(mp4OutputDirectory);
+}
 
 foreach (string mp4File in Directory.GetFiles(mp4InputDirectory).Where(name => name.EndsWith("mp4", StringComparison.OrdinalIgnoreCase)))
 {

@@ -12,8 +12,7 @@ COPY --from=build-env /App/out .
 RUN apt-get -y update
 RUN apt-get install -y ffmpeg
 
-RUN mkdir /usr/share/reducemp4 \
-	mkdir /usr/share/reducemp4/output
+RUN mkdir /usr/share/reducemp4
 
 VOLUME /usr/share/reducemp4
 
