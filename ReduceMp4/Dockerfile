@@ -9,8 +9,11 @@ FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /App
 COPY --from=build-env /App/out .
 
-RUN apt-get -y update
-RUN apt-get install -y ffmpeg
+RUN apt-get -y update \
+ && apt-get install --no-install-recommends -y ffmpeg \
+ && apt-get -y autoremove \
+ && apt-get clean autoclean \ 
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir /usr/share/reducemp4
 
