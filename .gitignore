@@ -20,3 +20,5 @@ bld/
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 **/Properties/launchSettings.json
+
+.fake
