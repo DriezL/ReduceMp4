@@ -1,4 +1,5 @@
 .vs
+.vscode
 **/[Pp]ackages/*
 **/.[Pp]ackages/*
 *.nuget.props
